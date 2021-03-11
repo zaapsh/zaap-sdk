@@ -1,7 +1,2 @@
-interface Hello {
-  test: string
-}
-
-export function test(): Hello {
-  return { test: "Hllo world !" }
-}
+export { isNative, sendMessage } from './util'
+export { share } from './modules/share'

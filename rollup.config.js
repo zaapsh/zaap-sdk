@@ -1,4 +1,5 @@
 const typescript = require('@rollup/plugin-typescript')
+const commonjs = require('@rollup/plugin-commonjs')
 
 module.exports = {
   input: 'src/index.ts',
@@ -7,5 +8,10 @@ module.exports = {
     format: 'umd',
     name: 'Zaap',
   },
-  plugins: [typescript()]
+  plugins: [
+    typescript(),
+    commonjs({
+      extensions: ['.js', '.ts'],
+    })
+  ]
 }
