@@ -1,8 +1,8 @@
 {
   "name": "@zaapsh/zaap-sdk",
   "version": "1.0.0",
-  "main": "dist/zaap.umd.js",
-  "types": "dist/zaap.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "src",
     "dist"
