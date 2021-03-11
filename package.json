@@ -1,0 +1,22 @@
+{
+  "name": "@zaapsh/zaap-sdk",
+  "version": "1.0.0",
+  "main": "dist/zaap.umd.js",
+  "types": "dist/zaap.d.ts",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "repository": "git@github.com:zaapsh/zaap-sdk.git",
+  "author": "Rémi Caumette <remicaumette@icloud.com>",
+  "license": "proprietary",
+  "scripts": {
+    "build": "rollup -c rollup.config.js"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^8.2.0",
+    "rollup": "^2.41.1",
+    "tslib": "^2.1.0",
+    "typescript": "^4.2.3"
+  }
+}
