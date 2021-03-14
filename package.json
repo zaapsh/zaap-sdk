@@ -1,12 +1,16 @@
 {
   "name": "@zaapsh/zaap-sdk",
   "version": "1.0.0",
+  "description": "⚡️ A JavaScript library for building performant and instant mobile apps experiences with Zaap.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "src",
     "dist"
   ],
+  "bugs": {
+    "url": "https://github.com/zaapsh/zaap-sdk/issues"
+  },
   "repository": "git@github.com:zaapsh/zaap-sdk.git",
   "author": "Rémi Caumette <remicaumette@icloud.com>",
   "license": "proprietary",
