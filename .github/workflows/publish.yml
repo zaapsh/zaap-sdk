@@ -3,27 +3,16 @@ on:
   push:
     branches: [ release ]
 jobs:
-  main:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: install dependencies
       - uses: actions/checkout@v2
-        run: yarn
-          yarn
-          yarn build
-
-      - name: build
+      - uses: actions/setup-node@v2
         with:
-          name: rollup artifacts
-          path: dist/
-
-      - name: publish
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
-        - run: npm publish --access public
+          node-version: '12.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm install
+      - run: npm run build
+      - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
