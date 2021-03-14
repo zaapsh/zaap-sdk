@@ -8,6 +8,7 @@ export interface SendMessageOptions {
     "OPEN_IN_APP_BROWSER"                 |
     "GET_ONE_SIGNAL_DEVICE_STATE"         |
     "DISABLE_ONE_SIGNAL_PUSH"             |
+    "ENABLE_ONE_SIGNAL_PUSH"              |
     "SET_ONE_SIGNAL_EXTERNAL_USER_ID"     |
     "REMOVE_ONE_SIGNAL_EXTERNAL_USER_ID"  |
     "SET_ONE_SIGNAL_EMAIL"                |
