@@ -15,7 +15,12 @@ export interface SendMessageOptions {
     "LOGOUT_ONE_SIGNAL_EMAIL"             |
     "CLEAR_ONE_SIGNAL_NOTIFICATIONS"      |
     "REMOVE_ONE_SIGNAL_NOTIFICATION"      |
-    "POST_ONE_SIGNAL_NOTIFICATION"
+    "POST_ONE_SIGNAL_NOTIFICATION"        |
+    "GET_ONE_SIGNAL_TAGS"                 |
+    "SEND_ONE_SIGNAL_TAG"                 |
+    "SEND_ONE_SIGNAL_TAGS"                |
+    "DELETE_ONE_SIGNAL_TAG"               |
+    "DELETE_ONE_SIGNAL_TAGS"
   payload?: object
 }
 

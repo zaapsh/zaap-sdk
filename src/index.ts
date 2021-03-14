@@ -11,5 +11,10 @@ export {
   logoutEmail,
   clearNotifications,
   removeNotification,
-  postNotification
+  postNotification,
+  getTags,
+  sendTag,
+  sendTags,
+  deleteTag,
+  deleteTags,
 } from './modules/oneSignal'

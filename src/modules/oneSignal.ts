@@ -48,6 +48,21 @@ export async function logoutEmail(): Promise<boolean> {
   })
 }
 
+export interface SetExternalUserIdOptions {
+  userId?: string
+}
+
+export type SetExternalUserIdResult = {
+  results: object
+}
+
+export async function setExternalUserId(opts: SetExternalUserIdOptions): Promise<SetExternalUserIdResult> {
+  return sendMessageAndWaitResponse({
+    type: "SET_ONE_SIGNAL_EXTERNAL_USER_ID",
+    payload: opts,
+  })
+}
+
 export interface PostNotificationOptions {
   userIds?: Array<string>
   contents: object
@@ -97,15 +112,63 @@ export async function setEmail(opts: SetEmailOptions): Promise<SetEmailResult> {
   })
 }
 
-export interface SetExternalUserIdOptions {
-  userId: string
+export type GetTagsResult = object
+
+export async function getTags(): Promise<GetTagsResult> {
+  return sendMessageAndWaitResponse({
+    type: "GET_ONE_SIGNAL_TAGS",
+  })
 }
 
-export type SetExternalUserIdResult = object
+export interface SendTagOptions {
+  key: string
+  value: string
+}
 
-export async function setExternalUserId(opts: SetExternalUserIdOptions): Promise<SetExternalUserIdResult> {
+export type SendTagResult = object
+
+export async function sendTag(opts: SendTagOptions): Promise<SendTagResult> {
   return sendMessageAndWaitResponse({
-    type: "SET_ONE_SIGNAL_EXTERNAL_USER_ID",
+    type: "SEND_ONE_SIGNAL_TAG",
+    payload: opts,
+  })
+}
+
+export interface SendTagsOptions {
+  tags: object
+}
+
+export type SendTagsResult = object
+
+export async function sendTags(opts: SendTagsOptions): Promise<SendTagsResult> {
+  return sendMessageAndWaitResponse({
+    type: "SEND_ONE_SIGNAL_TAGS",
+    payload: opts,
+  })
+}
+
+export interface DeleteTagOptions {
+  key: string
+}
+
+export type DeleteTagResult = object
+
+export async function deleteTag(opts: DeleteTagOptions): Promise<DeleteTagResult> {
+  return sendMessageAndWaitResponse({
+    type: "DELETE_ONE_SIGNAL_TAG",
+    payload: opts,
+  })
+}
+
+export interface DeleteTagsOptions {
+  keys: Array<string>
+}
+
+export type DeleteTagsResult = object
+
+export async function deleteTags(opts: DeleteTagsOptions): Promise<DeleteTagsResult> {
+  return sendMessageAndWaitResponse({
+    type: "DELETE_ONE_SIGNAL_TAGS",
     payload: opts,
   })
 }
