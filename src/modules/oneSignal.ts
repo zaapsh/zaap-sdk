@@ -1,4 +1,4 @@
-import { sendMessageAndWaitResponse } from "../util";
+import { sendMessage, sendMessageAndWaitResponse } from "../util";
 
 export type ClearNotificationsResult = "SUCCESS"
 
@@ -42,10 +42,8 @@ export async function getDeviceState(): Promise<GetDeviceStateResult> {
   })
 }
 
-export type LogoutEmailResult = "SUCCESS" | "ERROR"
-
-export async function logoutEmail(): Promise<LogoutEmailResult> {
-  return sendMessageAndWaitResponse({
+export async function logoutEmail(): Promise<boolean> {
+  return sendMessage({
     type: "LOGOUT_ONE_SIGNAL_EMAIL",
   })
 }

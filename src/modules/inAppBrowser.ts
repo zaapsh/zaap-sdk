@@ -1,12 +1,12 @@
 import { sendMessageAndWaitResponse } from "../util";
 
-export interface OpenInAppBrowserOptions {
+export interface InAppBrowserOptions {
   url?: string
 }
 
-export type OpenInAppBrowserResult = "OPENED" | "DISMISSED"
+export type InAppBrowserResult = "OPENED" | "DISMISSED"
 
-export async function openInAppBrowser(opts: OpenInAppBrowserOptions): Promise<OpenInAppBrowserResult> {
+export async function inAppBrowser(opts: InAppBrowserOptions): Promise<InAppBrowserResult> {
   return sendMessageAndWaitResponse({
     type: "OPEN_IN_APP_BROWSER",
     payload: opts,

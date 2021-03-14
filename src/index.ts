@@ -1,6 +1,6 @@
 export { isNative, sendMessage } from './util'
 export { share } from './modules/share'
-export { openInAppBrowser } from './modules/openInAppBrowser'
+export { inAppBrowser } from './modules/inAppBrowser'
 export {
   getDeviceState,
   disablePush,
