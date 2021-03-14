@@ -1,5 +1,5 @@
 {
-  "name": "@zaapsh/zaap-sdk",
+  "name": "zaap-sdk",
   "version": "1.0.0",
   "description": "⚡️ A JavaScript library for building performant and instant mobile apps experiences with Zaap.",
   "main": "dist/index.js",
