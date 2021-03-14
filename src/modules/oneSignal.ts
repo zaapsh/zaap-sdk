@@ -1,4 +1,4 @@
-import { sendMessage, sendMessageAndWaitResponse } from "../util";
+import { sendMessage, sendMessageAndWaitResponse } from '../util'
 
 export type ClearNotificationsResult = "SUCCESS"
 
