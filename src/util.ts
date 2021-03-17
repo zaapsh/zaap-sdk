@@ -42,5 +42,17 @@ export function sendMessageAndWaitResponse(opts: SendMessageOptions): Promise<an
     ...opts,
     requestId,
   }))
-  return Promise.resolve(undefined)
+  return new Promise((resolve, reject) => {
+    function onMessage(event: any) {
+      try {
+        const data = JSON.parse(event.data)
+        if (data.type === 'RESPONSE' && data.requestId === requestId) {
+          window.removeEventListener('message', onMessage)
+          resolve(data.payload);
+        }
+      } catch (error) {}
+    }
+
+    window.addEventListener('message', onMessage)
+  })
 }
