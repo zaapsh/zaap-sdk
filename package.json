@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.13.10",
+    "events": "^3.3.0",
     "ts-transformer-keys": "^0.4.3",
     "uuid": "^8.3.2"
   },

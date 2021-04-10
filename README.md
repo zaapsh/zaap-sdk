@@ -7,7 +7,6 @@
 ---
 
 ![npm](https://img.shields.io/npm/v/zaap-sdk)
-![GitHub](https://img.shields.io/github/license/zaapsh/zaap-sdk)
 
 <details>
   <summary><strong>Table of contents</strong></summary>
