@@ -2,6 +2,6 @@ export interface OpenOptions {
   url: string
 }
 
-export default interface InAppBrowserPlugin {
+export default interface BrowserPlugin {
   open(opts: OpenOptions): Promise<void>
 }

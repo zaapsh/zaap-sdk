@@ -2,7 +2,7 @@ import {EventEmitter} from "events";
 import {TypedEventEmitter} from "rollup";
 import {keys} from "ts-transformer-keys";
 import {postMessage, listenEvents, waitResponseFor} from "./bridge";
-import InAppBrowser from "./plugins/InAppBrowser"
+import Browser from "./plugins/Browser"
 import Share from "./plugins/Share"
 import OneSignal from "./plugins/OneSignal"
 
@@ -29,7 +29,7 @@ function registerPlugin<T>(pluginName: string, pluginMethods: string[]): T {
 
 function createZaap() {
   const Plugins = {
-    InAppBrowser: registerPlugin<InAppBrowser>('InAppBrowser', keys<InAppBrowser>()),
+    Browser: registerPlugin<Browser>('Browser', keys<Browser>()),
     Share: registerPlugin<Share>('Share', keys<Share>()),
     OneSignal: registerPlugin<OneSignal>('OneSignal', keys<OneSignal>()),
   }
