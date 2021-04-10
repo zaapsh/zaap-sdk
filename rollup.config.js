@@ -5,11 +5,17 @@ const keysTransformer = require('ts-transformer-keys/transformer').default
 
 module.exports = {
   input: 'src/index.ts',
-  output: {
-    dir: 'dist',
-    format: 'umd',
-    name: 'Zaap',
-  },
+  output: [
+    {
+      format: 'umd',
+      name: 'Zaap',
+      file: 'dist/index.js'
+    },
+    {
+      format: 'es',
+      file: 'dist/index.esm.js'
+    },
+  ],
   plugins: [
     typescript({
       module: 'esnext',
