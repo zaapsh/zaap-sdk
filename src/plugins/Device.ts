@@ -1,13 +1,13 @@
 export interface DeviceInfo {
   name: string
   model: string
-  platform: "unknown" | "ios" | "android"
+  platform: string
   uuid: string
   appVersion: string
   appBuild: string
   appId: string
   appName: string
-  operatingSystem: "unknown" | "ios" | "android"
+  operatingSystem: string
   osVersion: string
   manufacturer: string
   isVirtual: boolean
@@ -21,12 +21,7 @@ export interface DeviceBatteryInfo {
   isCharging: boolean
 }
 
-export interface DeviceLanguageCodeResult {
-  value: string
-}
-
 export default interface DevicePlugin {
   getInfo(): Promise<DeviceInfo>
   getBatteryInfo(): Promise<DeviceBatteryInfo>
-  getLanguageCode(): Promise<DeviceLanguageCodeResult>
 }
