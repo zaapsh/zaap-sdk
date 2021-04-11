@@ -18,7 +18,7 @@ export interface GeolocationPosition {
 }
 
 export default interface GeolocationPlugin {
-  getCurrentPosition(options?: GeolocationOptions): Promise<GeolocationPosition>
+  getCurrentPosition(opts?: GeolocationOptions): Promise<GeolocationPosition>
 
   // watchPosition(options: GeolocationOptions, callback: GeolocationWatchCallback): string
   //
