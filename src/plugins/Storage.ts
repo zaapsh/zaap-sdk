@@ -1,5 +1,5 @@
 export default interface StoragePlugin {
-  get(key: string): Promise<{ value: string | null }>
+  get(key: string): Promise<string | null>
 
   set(key: string, value: string): Promise<void>
 
@@ -7,5 +7,5 @@ export default interface StoragePlugin {
 
   clear(): Promise<void>
 
-  keys(): Promise<{ keys: string[] }>
+  keys(): Promise<string[]>
 }

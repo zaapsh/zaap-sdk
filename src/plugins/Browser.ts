@@ -4,5 +4,6 @@ export interface OpenOptions {
 
 export default interface BrowserPlugin {
   open(opts: OpenOptions): Promise<void>
+
   close(): Promise<void>
 }

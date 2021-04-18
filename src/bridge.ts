@@ -14,13 +14,16 @@ export function postMessage(pluginName: string, action: string, args: any[]): st
 }
 
 export function waitResponseFor(pluginName: string, requestId: string): Promise<any> {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     function onMessage(event: any) {
       try {
         const data = JSON.parse(event.data)
-        if (data.type === 'response' && data.pluginName === pluginName && data.requestId === requestId) {
+        if (data.type === 'response/success' && data.pluginName === pluginName && data.requestId === requestId) {
           window.removeEventListener('message', onMessage)
           resolve(data.payload);
+        } else if (data.type === 'response/failure' && data.pluginName === pluginName && data.requestId === requestId) {
+          window.removeEventListener('message', onMessage)
+          reject(new Error(data.payload));
         }
       } catch (error) {}
     }

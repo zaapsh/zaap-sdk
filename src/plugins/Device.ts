@@ -23,5 +23,6 @@ export interface DeviceBatteryInfo {
 
 export default interface DevicePlugin {
   getInfo(): Promise<DeviceInfo>
+
   getBatteryInfo(): Promise<DeviceBatteryInfo>
 }
