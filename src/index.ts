@@ -7,6 +7,7 @@ import Biometric from "./plugins/Biometric"
 import Browser from "./plugins/Browser"
 import Device from "./plugins/Device"
 import Geolocation from "./plugins/Geolocation"
+import Haptics from "./plugins/Haptics"
 import OneSignal from "./plugins/OneSignal"
 import Share from "./plugins/Share"
 import Storage from "./plugins/Storage"
@@ -39,6 +40,7 @@ function createZaap() {
     Browser: registerPlugin<Browser>('Browser', keys<Browser>()),
     Device: registerPlugin<Device>('Device', keys<Device>()),
     Geolocation: registerPlugin<Geolocation>('Geolocation', keys<Geolocation>()),
+    Haptics: registerPlugin<Haptics>('Haptics', keys<Haptics>()),
     OneSignal: registerPlugin<OneSignal>('OneSignal', keys<OneSignal>()),
     Share: registerPlugin<Share>('Share', keys<Share>()),
     Storage: registerPlugin<Storage>('Storage', keys<Storage>()),
