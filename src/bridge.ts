@@ -4,12 +4,14 @@ const webview = (window as any).ReactNativeWebView
 
 export function postMessage(pluginName: string, action: string, args: any[]): string {
   const requestId = uuid()
-  webview.postMessage(JSON.stringify({
-    requestId,
-    pluginName,
-    action,
-    arguments: args,
-  }))
+  if (webview !== undefined && webview.postMessage) {
+    webview.postMessage(JSON.stringify({
+      requestId,
+      pluginName,
+      action,
+      arguments: args,
+    }))
+  }
   return requestId
 }
 
