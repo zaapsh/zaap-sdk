@@ -2,6 +2,10 @@ import {v4 as uuid} from "uuid";
 
 const webview = (window as any).ReactNativeWebView
 
+export function isAvailable(): boolean {
+  return !!webview.postMessage
+}
+
 export function postMessage(pluginName: string, action: string, args: any[]): string {
   const requestId = uuid()
   if (webview !== undefined && webview.postMessage) {
