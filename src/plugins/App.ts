@@ -6,7 +6,7 @@ export interface Info {
   id: string
   name: string
   version: string
-  theme: "dark" | "light"
+  theme: "dark" | "light" | null
   build: string
 }
 
