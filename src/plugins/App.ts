@@ -18,6 +18,8 @@ export type Events = {
 }
 
 export interface AppBasePlugin {
+  exitApp(): Promise<void>
+
   getInfo(): Promise<AppInfo>
 
   getState(): Promise<AppState>
