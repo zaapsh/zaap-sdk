@@ -1,11 +1,24 @@
+export type GetOptions = string
+
+export type GetResult = string | null
+
+export interface SetOptions {
+  key: string
+  value: string
+}
+
+export type RemoveOptions = string
+
+export type KeysResult = string[]
+
 export default interface StoragePlugin {
-  get(key: string): Promise<string | null>
+  get(options: GetOptions): Promise<GetResult>
 
-  set(key: string, value: string): Promise<void>
+  set(options: SetOptions): Promise<void>
 
-  remove(key: string): Promise<void>
+  remove(options: RemoveOptions): Promise<void>
 
   clear(): Promise<void>
 
-  keys(): Promise<string[]>
+  keys(): Promise<KeysResult>
 }

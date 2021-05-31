@@ -1,12 +1,13 @@
-export interface OpenOptions {
+export interface ShareOptions {
+  title?: string
   message?: string
   url?: string
-  title?: string
   subject?: string
 }
 
-export type OpenResult = "SHARED" | "DISMISSED"
+export type ShareResult = "SHARED" | "DISMISSED"
 
 export default interface SharePlugin {
-  open(opts: OpenOptions): Promise<OpenResult>
+  open(options: ShareOptions): Promise<ShareResult>
+
 }

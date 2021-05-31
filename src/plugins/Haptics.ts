@@ -1,11 +1,21 @@
-export type NotificationType = "success" | "warning" | "error"
+export enum ImpactStyle {
+  Heavy = 'HEAVY',
+  Medium = 'MEDIUM',
+  Light = 'LIGHT',
+}
 
-export type ImpactType = "light" | "medium" | "heavy"
+export enum NotificationType {
+  Success = 'SUCCESS',
+  Warning = 'WARNING',
+  Error = 'ERROR',
+}
+
+export type ImpactOptions = ImpactStyle
+
+export type NotificationOptions = NotificationType
 
 export default interface HapticsPlugin {
-  selection(): Promise<void>
+  impact(options?: ImpactOptions | undefined): Promise<void>
 
-  notification(type: NotificationType): Promise<void>
-
-  impact(type: ImpactType): Promise<void>
+  notification(options?: NotificationOptions | undefined): Promise<void>
 }

@@ -6,6 +6,7 @@ import App from "./plugins/App"
 import Biometric from "./plugins/Biometric"
 import Browser from "./plugins/Browser"
 import Device from "./plugins/Device"
+import Dialog from "./plugins/Dialog"
 import Geolocation from "./plugins/Geolocation"
 import Haptics from "./plugins/Haptics"
 import OneSignal from "./plugins/OneSignal"
@@ -41,6 +42,7 @@ function createZaap() {
     Biometric: registerPlugin<Biometric>('Biometric', keys<Biometric>()),
     Browser: registerPlugin<Browser>('Browser', keys<Browser>()),
     Device: registerPlugin<Device>('Device', keys<Device>()),
+    Dialog: registerPlugin<Dialog>('Dialog', keys<Dialog>()),
     Geolocation: registerPlugin<Geolocation>('Geolocation', keys<Geolocation>()),
     Haptics: registerPlugin<Haptics>('Haptics', keys<Haptics>()),
     OneSignal: registerPlugin<OneSignal>('OneSignal', keys<OneSignal>()),

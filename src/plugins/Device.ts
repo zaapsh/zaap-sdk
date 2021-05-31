@@ -1,3 +1,5 @@
+export type DeviceId = string
+
 export interface DeviceInfo {
   name: string
   model: string
@@ -16,13 +18,15 @@ export interface DeviceInfo {
   diskTotal: number
 }
 
-export interface DeviceBatteryInfo {
+export interface BatteryInfo {
   batteryLevel: number
   isCharging: boolean
 }
 
 export default interface DevicePlugin {
+  getId(): Promise<DeviceId>
+
   getInfo(): Promise<DeviceInfo>
 
-  getBatteryInfo(): Promise<DeviceBatteryInfo>
+  getBatteryInfo(): Promise<BatteryInfo>
 }

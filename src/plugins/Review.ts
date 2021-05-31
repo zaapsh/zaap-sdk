@@ -1,5 +1,9 @@
-export default interface ReviewPlugin {
-  request(): Promise<Boolean>
+export type ReviewResult = boolean
 
-  isAvailable(): Boolean
+export type ReviewAvailable = boolean
+
+export default interface ReviewPlugin {
+  request(): Promise<ReviewResult>
+
+  isAvailable(): ReviewAvailable
 }

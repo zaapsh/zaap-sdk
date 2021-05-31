@@ -2,13 +2,13 @@ export type AuthorizationLevel = "whenInUse" | "always"
 
 export type AuthorizationStatus = "disabled" | "granted" | "denied" | "restricted" | "never_ask_again"
 
-export interface GeolocationOptions {
+export interface PositionOptions {
   enableHighAccuracy?: boolean
   timeout?: number
   maximumAge?: number
 }
 
-export interface GeolocationPosition {
+export interface Position {
   timestamp:  number
   coords: {
     latitude: number
@@ -24,7 +24,7 @@ export interface GeolocationPosition {
 export default interface GeolocationPlugin {
   requestAuthorization(authorizationLevel: AuthorizationLevel): Promise<AuthorizationStatus>
 
-  getCurrentPosition(opts?: GeolocationOptions): Promise<GeolocationPosition>
+  getCurrentPosition(options?: PositionOptions | undefined): Promise<Position>
 
   // watchPosition(options: GeolocationOptions, callback: GeolocationWatchCallback): string
 
