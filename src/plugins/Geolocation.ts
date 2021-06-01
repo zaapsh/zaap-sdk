@@ -1,6 +1,12 @@
-export type AuthorizationLevel = "whenInUse" | "always"
+export type PermissionState = "disabled" | "granted" | "denied" | "restricted" | "never_ask_again"
 
-export type AuthorizationStatus = "disabled" | "granted" | "denied" | "restricted" | "never_ask_again"
+export interface PermissionLevel {
+  level: "whenInUse" | "always"
+}
+
+export interface PermissionStatus {
+  location: PermissionState
+}
 
 export interface PositionOptions {
   enableHighAccuracy?: boolean
@@ -22,11 +28,7 @@ export interface Position {
 }
 
 export default interface GeolocationPlugin {
-  requestAuthorization(authorizationLevel: AuthorizationLevel): Promise<AuthorizationStatus>
-
   getCurrentPosition(options?: PositionOptions | undefined): Promise<Position>
 
-  // watchPosition(options: GeolocationOptions, callback: GeolocationWatchCallback): string
-
-  // clearWatch(options: { id: string; }): Promise<void>
+  requestPermissions(options: PermissionLevel): Promise<PermissionStatus>
 }

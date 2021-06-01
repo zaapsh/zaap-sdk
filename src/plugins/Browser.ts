@@ -1,5 +1,6 @@
 export interface OpenOptions {
   url: string
+  toolbarColor: string
 }
 
 export default interface BrowserPlugin {

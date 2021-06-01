@@ -1,16 +1,24 @@
-import {TypedEventEmitter} from "rollup"
+import { TypedEventEmitter } from "rollup"
 
 export interface AppInfo {
   id: string
   name: string
   build: string
   version: string
-  theme: "dark" | "light" | null
+  theme: 'light' | 'dark' | null | undefined
 }
 
-export type AppState = "active" | "background"
+export interface AppState {
+  isActive: boolean
+}
 
-export type AppLaunchUrl = string
+export interface AppLaunchUrl {
+  url: string
+}
+
+export interface OpenUrlOptions {
+  url: string
+}
 
 export type Events = {
   url: (payload: { url: string }) => void
@@ -24,13 +32,13 @@ export interface AppBasePlugin {
 
   getState(): Promise<AppState>
 
-  getLaunchUrl(): Promise<AppLaunchUrl | undefined>
+  getLaunchUrl(): Promise<AppLaunchUrl>
 
   openSettings(): Promise<void>
 
-  canOpenUrl(url: string): Promise<boolean>
+  canOpenUrl(options: OpenUrlOptions): Promise<boolean>
 
-  openUrl(url: string): Promise<any>
+  openUrl(options: OpenUrlOptions): Promise<any>
 }
 
 export default interface AppPlugin extends AppBasePlugin, TypedEventEmitter<Events> {}

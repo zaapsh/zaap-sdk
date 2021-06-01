@@ -1,15 +1,23 @@
-export type GetOptions = string
+export interface GetOptions {
+  group: string
+}
 
-export type GetResult = string | null
+export interface GetResult {
+  value: string | null
+}
 
 export interface SetOptions {
   key: string
   value: string
 }
 
-export type RemoveOptions = string
+export interface RemoveOptions {
+  key: string
+}
 
-export type KeysResult = string[]
+export interface KeysResult {
+  keys: string[]
+}
 
 export default interface StoragePlugin {
   get(options: GetOptions): Promise<GetResult>

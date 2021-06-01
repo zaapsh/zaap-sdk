@@ -1,13 +1,14 @@
 export interface ShareOptions {
   title?: string
-  message?: string
+  text?: string
   url?: string
-  subject?: string
+  dialogTitle?: string
 }
 
-export type ShareResult = "SHARED" | "DISMISSED"
+export interface ShareResult {
+  activityType: "SHARED" | "DISMISSED"
+}
 
 export default interface SharePlugin {
   open(options: ShareOptions): Promise<ShareResult>
-
 }

@@ -10,9 +10,13 @@ export enum NotificationType {
   Error = 'ERROR',
 }
 
-export type ImpactOptions = ImpactStyle
+export interface ImpactOptions {
+  style: ImpactStyle
+}
 
-export type NotificationOptions = NotificationType
+export interface NotificationOptions {
+  type: NotificationType
+}
 
 export default interface HapticsPlugin {
   impact(options?: ImpactOptions | undefined): Promise<void>
