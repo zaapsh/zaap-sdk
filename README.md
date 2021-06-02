@@ -1,13 +1,15 @@
 # Introduction
 
-Plugins in Zaap enable JavaScript to interface directly with Native APIs. Web apps can access the full power of Native APIs with plugins.
+Zaap provides a consistent, web-focused set of APIs that enable an app to stay as close to web standards as possible, while accessing rich native device features on platforms that support them.
 
-## Getting started
+## Get Started
+
+Getting started with Zaap is easy! In the root of your app, install Zaap:
 
 ```bash
-$ yarn add zaap-sdk
-# - or -
-$ npm install zaap-sdk
+yarn add zaap-sdk
+# or
+npm install zaap-sdk
 ```
 
 ## Plugins
