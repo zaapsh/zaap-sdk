@@ -2,7 +2,6 @@
 
 * [Introduction](README.md)
 * [Getting started](getting-started.md)
-* [Plugins](plugins-1.md)
 
 ## Plugins
 

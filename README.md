@@ -1,58 +1,30 @@
-<p align="center">
-  <p align="center">
-    Zaap-sdk is a JavaScript library for building performant and instant mobile apps experiences with Zaap.
-  </p>
-</p>
-
+---
+description: >-
+  Plugins in Zaap enable JavaScript to interface directly with Native APIs. Web
+  apps can access the full power of Native APIs with plugins.
 ---
 
-![npm](https://img.shields.io/npm/v/zaap-sdk)
+# Introduction
 
-<details>
-  <summary><strong>Table of contents</strong></summary>
+## Plugins
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+The Plugins are a set of Zaap plugins maintained by the Zaap team that provide access to commonly used native APIs. The API documentation for these plugins can be found below.
 
-- [Getting started](#getting-started)
-- [Installation](#installation)
-- [Documentation](#documentation)
-- [Demos](#demos)
+* [`App`](plugins/app.md)
+* [`App Launcher`](plugins/app-launcher.md)
+* [`Biometric`](plugins/biometric.md)
+* [`Browser`](plugins/browser.md)
+* [`Device`](plugins/device.md)
+* [`Dialog`](plugins/dialog.md)
+* [`Geolocation`](plugins/geolocation.md)
+* [`Haptics`](plugins/haptics.md)
+* [`OneSignal`](plugins/onesignal.md)
+* [`Review`](plugins/review.md)
+* [`Share`](plugins/share.md)
+* [`Storage`](plugins/storage.md)
+* [`Tracking`](plugins/tracking.md)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+## Github
 
-</details>
+You can find the source for these plugins [on GitHub](https://github.com/zaapsh/zaap-sdk/tree/main).
 
-## Getting started
-
-Using Zaap-sdk is as simple as adding this JavaScript code to your page:
-
-```javascript
-import { share } from 'zaap-sdk'
-
-function App() {
-  function handleShare() {
-    await share({ message: 'Placeholder' })
-  }
-
-  return (
-     ...
-  )
-}
-```
-
-## Installation
-
-```sh
-npm install zaap-sdk
-# or
-yarn add zaap-sdk
-```
-
-## Documentation
-
-The documentation is on the way.
-
-## Demos
-
-See the [React demo](https://github.com/zaapsh/demo-react).
