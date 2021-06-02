@@ -16,10 +16,6 @@ export interface AppLaunchUrl {
   url: string
 }
 
-export interface OpenUrlOptions {
-  url: string
-}
-
 export type Events = {
   url: (payload: { url: string }) => void
   hardwareBackPress: () => void
@@ -33,12 +29,6 @@ export interface AppBasePlugin {
   getState(): Promise<AppState>
 
   getLaunchUrl(): Promise<AppLaunchUrl>
-
-  openSettings(): Promise<void>
-
-  canOpenUrl(options: OpenUrlOptions): Promise<boolean>
-
-  openUrl(options: OpenUrlOptions): Promise<any>
 }
 
 export default interface AppPlugin extends AppBasePlugin, TypedEventEmitter<Events> {}
