@@ -1,10 +1,10 @@
 # Introduction
 
-Zaap provides a consistent, web-focused set of APIs that enable an app to stay as close to web standards as possible, while accessing rich native device features on platforms that support them.
+Zaap is a cross-platform API and code execution layer that makes it easy to call Native SDKs from web code and to write custom native plugins that your app may need. Zaap provides a consistent, web-focused set of APIs that enable an app to stay as close to web standards as possible, while accessing rich native device features on platforms that support them.
 
 ## Get Started
 
-Getting started with Zaap is easy! In the root of your app, install Zaap:
+Zaap was designed to drop-in to any existing modern web app. Run the following commands to initialize Zaap in your app:
 
 ```bash
 yarn add zaap-sdk
