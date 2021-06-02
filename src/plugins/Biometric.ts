@@ -1,35 +1,23 @@
-export interface SaveCredentialsOptions {
-  username?: string
-  password?: string
-}
-
-export interface Result {
-  service: string,
-  storage: string,
-}
-
-export interface UserCredentials {
-  username?: string
-  password?: string
-}
+export type AuthenticationType = "FaceID" | "TouchID"
 
 export interface AuthenticateOptions {
   title?: string
+  reason?: string
   cancelText?: string
   fallbackLabel?: string
   passcodeFallback?: boolean
 }
 
-export type SupportedAuthentication = "FaceID" | "TouchID"
+export interface AuthenticateResults {
+  authenticated: boolean
+}
+
+export interface SupportedResults {
+  authenticationType: AuthenticationType
+}
 
 export default interface Biometric {
-  saveCredentials(opts: SaveCredentialsOptions): Promise<false | Result>
+  authenticate(options?: AuthenticateOptions): Promise<AuthenticateResults>
 
-  resetCredentials(): Promise<boolean>
-
-  getCredentials(): Promise<UserCredentials>
-
-  authenticate(reason?: string, opts?: AuthenticateOptions): Promise<boolean>
-
-  isSupported(opts?: AuthenticateOptions): Promise<SupportedAuthentication>
+  isSupported(): Promise<SupportedResults>
 }
