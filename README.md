@@ -1,14 +1,18 @@
----
-description: >-
-  Plugins in Zaap enable JavaScript to interface directly with Native APIs. Web
-  apps can access the full power of Native APIs with plugins.
----
-
 # Introduction
+
+Plugins in Zaap enable JavaScript to interface directly with Native APIs. Web apps can access the full power of Native APIs with plugins.
+
+## Getting started
+
+```bash
+$ yarn add zaap-sdk
+# - or -
+$ npm install zaap-sdk
+```
 
 ## Plugins
 
-The Plugins are a set of Zaap plugins maintained by the Zaap team that provide access to commonly used native APIs. The API documentation for these plugins can be found below.
+Plugins in Zaap enable JavaScript to interface directly with commonly used native Native APIs. The API documentation for these plugins can be found below.
 
 * [`App`](plugins/app.md)
 * [`App Launcher`](plugins/app-launcher.md)
