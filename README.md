@@ -30,7 +30,3 @@ Plugins in Zaap enable JavaScript to interface directly with commonly used nativ
 * [`Storage`](plugins/storage.md)
 * [`Tracking`](plugins/tracking.md)
 
-## Github
-
-You can find the source for these plugins [on GitHub](https://github.com/zaapsh/zaap-sdk/tree/main).
-
