@@ -19,9 +19,13 @@ export interface NotificationOptions {
 }
 
 export default interface HapticsPlugin {
-  // Trigger a haptics "impact" feedback
+  /**
+   * Trigger a haptics "impact" feedback
+   */
   impact(options?: ImpactOptions | undefined): Promise<void>
 
-  // Trigger a haptics "notification" feedback
+  /**
+   * Trigger a haptics "notification" feedback
+   */
   notification(options?: NotificationOptions | undefined): Promise<void>
 }

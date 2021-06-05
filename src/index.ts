@@ -3,7 +3,6 @@ import { TypedEventEmitter } from "rollup"
 import { keys } from "ts-transformer-keys"
 import { postMessage, listenEvents, waitResponseFor, isAvailable } from "./bridge"
 import App from "./plugins/App"
-import AppLauncher from "./plugins/AppLauncher"
 import Biometric from "./plugins/Biometric"
 import Browser from "./plugins/Browser"
 import Device from "./plugins/Device"
@@ -41,7 +40,6 @@ function registerPlugin<T>(pluginName: string, pluginMethods: string[]): T {
 function createZaap() {
   const plugins = {
     App: registerPlugin<App>('App', keys<App>()),
-    AppLauncher: registerPlugin<AppLauncher>('AppLauncher', keys<AppLauncher>()),
     Biometric: registerPlugin<Biometric>('Biometric', keys<Biometric>()),
     Browser: registerPlugin<Browser>('Browser', keys<Browser>()),
     Device: registerPlugin<Device>('Device', keys<Device>()),

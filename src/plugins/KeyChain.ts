@@ -14,13 +14,19 @@ export interface Credentials {
 }
 
 export default interface KeyChainPlugin {
-  // Retrieve the credentials from the secure storage.
-  // This will request a biometric verification if the device support biometric authentication methods.
+  /**
+   * Retrieve the credentials from the secure storage.
+   * This will request a biometric verification if the device support biometric authentication methods.
+   */
   get(): Promise<Credentials | false>
 
-  // Set the credentials in the secure storage.
+  /**
+   * Set the credentials in the secure storage.
+   */
   set(options: SetOptions): Promise<SetResult | false>
 
-  // Remove the credentials from the secure storage.
+  /**
+   * Remove the credentials from the secure storage.
+   */
   clear(): Promise<boolean>
 }

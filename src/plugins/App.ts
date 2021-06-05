@@ -21,6 +21,22 @@ export type Events = {
   hardwareBackPress: () => void
 }
 
+export interface CanOpenURLOptions {
+  url: string
+}
+
+export interface CanOpenURLResult {
+  value: boolean
+}
+
+export interface OpenURLOptions {
+  url: string
+}
+
+export interface OpenURLResult {
+  completed: boolean
+}
+
 export interface AppBasePlugin {
   /**
    * Force exit the app.
@@ -29,7 +45,7 @@ export interface AppBasePlugin {
   exitApp(): Promise<void>
 
   /**
-   * @return Promise<AppInfo> Information about the app.
+   * Return information about the app.
    */
   getInfo(): Promise<AppInfo>
 
@@ -42,6 +58,21 @@ export interface AppBasePlugin {
    * Get the URL the app was launched with, if any.
    */
   getLaunchUrl(): Promise<AppLaunchUrl>
+
+  /**
+   * Open the homepage of the settings app.
+   */
+  openSettings(): Promise<void>
+
+  /**
+   * Check if an app can be opened with the given URL.
+   */
+  canOpenUrl(options: CanOpenURLOptions): Promise<CanOpenURLResult>
+
+  /**
+   * Open an app with the given URL.
+   */
+  openUrl(options: OpenURLOptions): Promise<OpenURLResult>
 }
 
 export default interface AppPlugin extends AppBasePlugin, TypedEventEmitter<Events> {}

@@ -30,12 +30,18 @@ interface ConfirmResult {
 }
 
 export default interface AppBasePlugin {
-  // Show an alert dialog
+  /**
+   * Show an alert dialog
+   */
   alert(options: AlertOptions): Promise<void>
 
-  // Show a prompt dialog
+  /**
+   * Show a prompt dialog
+   */
   prompt(options: PromptOptions): Promise<PromptResult>
 
-  // Show a confirmation dialog
+  /**
+   * Show a confirmation dialog
+   */
   confirm(options: ConfirmOptions): Promise<ConfirmResult>
 }

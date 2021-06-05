@@ -10,6 +10,8 @@ export interface ShareResult {
 }
 
 export default interface SharePlugin {
-  // Show a Share modal for sharing content with other apps
+  /**
+   * Show a Share modal for sharing content with other apps
+   */
   open(options: ShareOptions): Promise<ShareResult>
 }

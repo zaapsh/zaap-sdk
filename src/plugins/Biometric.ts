@@ -17,9 +17,13 @@ export interface SupportedResults {
 }
 
 export default interface Biometric {
-  // Request a biometric verification
+  /**
+   * Request a biometric verification
+   */
   verify(options?: VerifyOptions): Promise<VerifyResults>
 
-  // Return if the device support biometric verification or not
+  /**
+   * Return if the device support biometric verification or not
+   */
   isSupported(): Promise<SupportedResults>
 }
