@@ -1,4 +1,4 @@
-import {TypedEventEmitter} from "rollup";
+import { TypedEventEmitter } from "rollup"
 
 export interface DeviceState {
   isSubscribed: boolean
@@ -30,8 +30,6 @@ export type Events = {
 }
 
 export interface OneSignalBasePlugin {
-  setRequiresUserPrivacyConsent(requiresUserPrivacyConsent: boolean): Promise<void>
-
   isUserProvidedPrivacyConsent(): Promise<boolean>
 
   provideUserConsent(granted: boolean): Promise<void>

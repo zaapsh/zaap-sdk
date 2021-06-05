@@ -28,7 +28,9 @@ export interface Position {
 }
 
 export default interface GeolocationPlugin {
+  // Get the current GPS location of the device
   getCurrentPosition(options?: PositionOptions | undefined): Promise<Position>
 
+  // Request location permissions
   requestPermissions(options: PermissionLevel): Promise<PermissionStatus>
 }

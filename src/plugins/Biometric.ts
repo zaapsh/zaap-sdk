@@ -1,6 +1,6 @@
 export type AuthenticationType = "FaceID" | "TouchID"
 
-export interface AuthenticateOptions {
+export interface VerifyOptions {
   title?: string
   reason?: string
   cancelText?: string
@@ -8,8 +8,8 @@ export interface AuthenticateOptions {
   passcodeFallback?: boolean
 }
 
-export interface AuthenticateResults {
-  authenticated: boolean
+export interface VerifyResults {
+  verified: boolean
 }
 
 export interface SupportedResults {
@@ -17,7 +17,9 @@ export interface SupportedResults {
 }
 
 export default interface Biometric {
-  authenticate(options?: AuthenticateOptions): Promise<AuthenticateResults>
+  // Request a biometric verification
+  verify(options?: VerifyOptions): Promise<VerifyResults>
 
+  // Return if the device support biometric verification or not
   isSupported(): Promise<SupportedResults>
 }

@@ -1,9 +1,9 @@
-export interface SetCredentialsOptions {
+export interface SetOptions {
   username: string
   password: string
 }
 
-export interface SetCredentialsResult {
+export interface SetResult {
   service: string,
   storage: string,
 }
@@ -14,9 +14,13 @@ export interface Credentials {
 }
 
 export default interface KeyChainPlugin {
-  getCredentials(): Promise<Credentials | false>
+  // Retrieve the credentials from the secure storage.
+  // This will request a biometric verification if the device support biometric authentication methods.
+  get(): Promise<Credentials | false>
 
-  resetCredentials(): Promise<boolean>
+  // Set the credentials in the secure storage.
+  set(options: SetOptions): Promise<SetResult | false>
 
-  setCredentials(options: SetCredentialsOptions): Promise<SetCredentialsResult | false>
+  // Remove the credentials from the secure storage.
+  clear(): Promise<boolean>
 }

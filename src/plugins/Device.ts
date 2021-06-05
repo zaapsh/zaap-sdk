@@ -27,11 +27,15 @@ export interface GetLanguageCodeResult {
 }
 
 export default interface DevicePlugin {
+  // Return a unique identifier for the device.
   getId(): Promise<DeviceId>
 
+  // Return information about the underlying device/os/platform.
   getInfo(): Promise<DeviceInfo>
 
+  // Return information about the battery.
   getBatteryInfo(): Promise<BatteryInfo>
 
+  // Get the device’s current language locale code.
   getLanguageCode(): Promise<GetLanguageCodeResult>
 }
