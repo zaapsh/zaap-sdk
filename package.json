@@ -1,6 +1,6 @@
 {
   "name": "zaap-sdk",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "⚡️ A JavaScript library for building performant and instant mobile apps experiences with Zaap.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
