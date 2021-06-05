@@ -22,17 +22,25 @@ export type Events = {
 }
 
 export interface AppBasePlugin {
-  // Force exit the app.
-  // This should only be used in conjunction with the backButton handler for Android to exit the app when navigation is complete.
+  /**
+   * Force exit the app.
+   * This should only be used in conjunction with the backButton handler for Android to exit the app when navigation is complete.
+   */
   exitApp(): Promise<void>
 
-  // Return information about the app.
+  /**
+   * @return Promise<AppInfo> Information about the app.
+   */
   getInfo(): Promise<AppInfo>
 
-  // Gets the current app state.
+  /**
+   * Gets the current app state.
+   */
   getState(): Promise<AppState>
 
-  // Get the URL the app was launched with, if any.
+  /**
+   * Get the URL the app was launched with, if any.
+   */
   getLaunchUrl(): Promise<AppLaunchUrl>
 }
 

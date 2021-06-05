@@ -1,7 +1,7 @@
-import {EventEmitter} from "events";
-import {TypedEventEmitter} from "rollup";
-import {keys} from "ts-transformer-keys";
-import {postMessage, listenEvents, waitResponseFor, isAvailable} from "./bridge";
+import { EventEmitter } from "events"
+import { TypedEventEmitter } from "rollup"
+import { keys } from "ts-transformer-keys"
+import { postMessage, listenEvents, waitResponseFor, isAvailable } from "./bridge"
 import App from "./plugins/App"
 import AppLauncher from "./plugins/AppLauncher"
 import Biometric from "./plugins/Biometric"
@@ -39,7 +39,7 @@ function registerPlugin<T>(pluginName: string, pluginMethods: string[]): T {
 }
 
 function createZaap() {
-  const Plugins = {
+  const plugins = {
     App: registerPlugin<App>('App', keys<App>()),
     AppLauncher: registerPlugin<AppLauncher>('AppLauncher', keys<AppLauncher>()),
     Biometric: registerPlugin<Biometric>('Biometric', keys<Biometric>()),
@@ -56,11 +56,11 @@ function createZaap() {
     Review: registerPlugin<Review>('Review', keys<Review>()),
   }
   return {
-    Plugins,
+    ...plugins,
     isAvailable: isAvailable(),
   }
 }
 
-const zaap = createZaap();
+const zaap = createZaap()
 
 export default zaap
