@@ -1,58 +1,23 @@
-<p align="center">
-  <p align="center">
-    Zaap-sdk is a JavaScript library for building performant and instant mobile apps experiences with Zaap.
-  </p>
-</p>
+<div align="center">
+  ⚡️ Zaap-sdk is a JavaScript library for building performant and instant mobile apps experiences with Zaap. ⚡️
+</div>
 
 ---
-
 ![npm](https://img.shields.io/npm/v/zaap-sdk)
+![npm](https://img.shields.io/npm/dw/zaap-sdk)
+![npm bundle size](https://img.shields.io/bundlephobia/min/zaap-sdk)
 
-<details>
-  <summary><strong>Table of contents</strong></summary>
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+Zaap is a cross-platform API and code execution layer that makes it easy to call Native SDKs from your web code.
 
-- [Getting started](#getting-started)
-- [Installation](#installation)
-- [Documentation](#documentation)
-- [Demos](#demos)
+## Getting Started
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-</details>
-
-## Getting started
-
-Using Zaap-sdk is as simple as adding this JavaScript code to your page:
-
-```javascript
-import { share } from 'zaap-sdk'
-
-function App() {
-  function handleShare() {
-    await share({ message: 'Placeholder' })
-  }
-
-  return (
-     ...
-  )
-}
+Zaap was designed to drop-in to any existing modern web app. Run the following commands to initialize it in your app:
 ```
-
-## Installation
-
-```sh
 npm install zaap-sdk
 # or
 yarn add zaap-sdk
 ```
 
 ## Documentation
-
-The documentation is on the way.
-
-## Demos
-
-See the [React demo](https://github.com/zaapsh/demo-react).
+You can found the documentation [here](https://docs.zaap.sh/).
