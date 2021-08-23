@@ -10,11 +10,11 @@ import Dialog from "./plugins/Dialog"
 import Geolocation from "./plugins/Geolocation"
 import Haptics from "./plugins/Haptics"
 import KeyChain from "./plugins/KeyChain"
-import OneSignal from "./plugins/OneSignal"
 import Share from "./plugins/Share"
 import Storage from "./plugins/Storage"
 import Tracking from "./plugins/Tracking"
 import Review from "./plugins/Review"
+import ZaapPlatform from "./plugins/ZaapPlatform"
 
 const eventEmitterMethods = keys<TypedEventEmitter<{}>>()
 
@@ -47,11 +47,11 @@ function createZaap() {
     Geolocation: registerPlugin<Geolocation>('Geolocation', keys<Geolocation>()),
     Haptics: registerPlugin<Haptics>('Haptics', keys<Haptics>()),
     KeyChain: registerPlugin<KeyChain>('KeyChain', keys<KeyChain>()),
-    OneSignal: registerPlugin<OneSignal>('OneSignal', keys<OneSignal>()),
     Share: registerPlugin<Share>('Share', keys<Share>()),
     Storage: registerPlugin<Storage>('Storage', keys<Storage>()),
     Tracking: registerPlugin<Tracking>('Tracking', keys<Tracking>()),
     Review: registerPlugin<Review>('Review', keys<Review>()),
+    ZaapPlatform: registerPlugin<ZaapPlatform>('ZaapPlatform', keys<ZaapPlatform>()),
   }
   return {
     ...plugins,
