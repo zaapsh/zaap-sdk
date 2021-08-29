@@ -20,4 +20,4 @@ yarn add zaap-sdk
 ```
 
 ## Documentation
-You can found the documentation [here](https://docs.zaap.sh/).
+You can found the documentation [here](https://zaap.notion.site/zaap/5263eb868c3648eabe7a33f164d57954).
